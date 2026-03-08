@@ -1,6 +1,6 @@
 # PROJECT_MEMORY
 
-Last updated: 2026-03-08
+Last updated: 2026-03-09
 Project: Atmosphere Atlas
 
 ## One-Sentence Mission
@@ -20,19 +20,26 @@ Create a public, curated atmosphere map of overlooked places, using short ambien
 - Build cadence: mixed weekly loop (field, studio, editorial, community)
 
 ## Current Phase
-Phase 0 - Planning complete, implementation scaffold pending
+Phase 1 - Foundation in progress (app scaffold + runtime config checks completed)
+
+## Recent Progress
+- Completed T01: Next.js app shell created under `web/` (TypeScript + strict mode + App Router).
+- Completed T05 (first pass): environment sample file and typed runtime config validation added.
+- Added readiness endpoint `GET /api/v1/health` with non-secret config status output.
+- Replaced starter homepage with Sprint-oriented status shell and config readiness panel.
+- Validation run: `npm run lint` and `npm run build` both pass.
 
 ## Immediate Next 10 Tasks
-1. Create Next.js app shell (`web/`)
-2. Set up local Postgres + PostGIS
-3. Apply `db_schema_v1.sql`
-4. Build `GET /api/v1/places` viewport query
-5. Build `/map` page with pins
-6. Build `/places/[id]` detail page
-7. Build `/submit` form with audio + photo upload
-8. Build `POST /api/v1/submissions`
-9. Build moderation queue page
-10. Implement approve/reject actions
+1. Set up local Postgres + PostGIS
+2. Apply `db_schema_v1.sql`
+3. Build `GET /api/v1/places` viewport query
+4. Build `/map` page with pins
+5. Build `/places/[id]` detail page
+6. Build `/submit` form with audio + photo upload
+7. Build `POST /api/v1/submissions`
+8. Build moderation queue page
+9. Implement approve/reject actions
+10. Add migration runner wiring for repeatable schema setup
 
 ## MVP Success Markers
 - At least 25 approved places in first city
