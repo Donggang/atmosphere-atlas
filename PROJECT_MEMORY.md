@@ -28,18 +28,20 @@ Phase 1 - Foundation in progress (app scaffold + runtime config checks completed
 - Added readiness endpoint `GET /api/v1/health` with non-secret config status output.
 - Replaced starter homepage with Sprint-oriented status shell and config readiness panel.
 - Validation run: `npm run lint` and `npm run build` both pass.
+- Completed T02/T03 setup wiring: added Docker Compose PostGIS service and repeatable db setup/migration scripts.
+- Added npm DB workflow commands (`db:up`, `db:wait`, `db:migrate`, `db:setup`, `db:down`) and docs.
 
 ## Immediate Next 10 Tasks
-1. Set up local Postgres + PostGIS
-2. Apply `db_schema_v1.sql`
-3. Build `GET /api/v1/places` viewport query
-4. Build `/map` page with pins
-5. Build `/places/[id]` detail page
-6. Build `/submit` form with audio + photo upload
-7. Build `POST /api/v1/submissions`
-8. Build moderation queue page
-9. Implement approve/reject actions
-10. Add migration runner wiring for repeatable schema setup
+1. Run `npm run db:setup` once to verify local Docker/PostGIS execution on this machine
+2. Build `GET /api/v1/places` viewport query
+3. Build `/map` page with pins
+4. Build `/places/[id]` detail page
+5. Build `/submit` form with audio + photo upload
+6. Build `POST /api/v1/submissions`
+7. Build moderation queue page
+8. Implement approve/reject actions
+9. Add DB connection module and query utilities in `web/`
+10. Seed first 10 places manually for read-path smoke tests
 
 ## MVP Success Markers
 - At least 25 approved places in first city

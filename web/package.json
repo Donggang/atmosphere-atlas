@@ -6,10 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:up": "docker compose -f ../docker-compose.yml up -d db",
+    "db:down": "docker compose -f ../docker-compose.yml down",
+    "db:wait": "node ./scripts/wait-for-db.mjs",
+    "db:migrate": "node ./scripts/apply-schema.mjs",
+    "db:setup": "npm run db:up && npm run db:wait && npm run db:migrate"
   },
   "dependencies": {
     "next": "16.1.6",
+    "pg": "^8.20.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "zod": "^4.3.6"

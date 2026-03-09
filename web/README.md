@@ -37,6 +37,29 @@ Open [http://localhost:3000](http://localhost:3000).
 - API health endpoint: [http://localhost:3000/api/v1/health](http://localhost:3000/api/v1/health)
 - If config is incomplete, health returns `503` and lists invalid keys.
 
+## Local Database (Postgres + PostGIS)
+
+From `web/`:
+
+```bash
+npm run db:setup
+```
+
+This command will:
+
+- start local PostGIS via Docker Compose (`../docker-compose.yml`)
+- wait for database readiness
+- apply root schema file `../db_schema_v1.sql`
+
+Additional commands:
+
+```bash
+npm run db:up
+npm run db:wait
+npm run db:migrate
+npm run db:down
+```
+
 ## Current Scope
 
 - One-city-first
